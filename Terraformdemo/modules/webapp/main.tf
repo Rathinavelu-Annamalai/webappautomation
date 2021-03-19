@@ -1,7 +1,7 @@
 resource "azurerm_app_service_plan" "example" { 
   name                = var.appsplanname
   location            = var.location
-  resource_group_name = var.rgname
+ resource_group_name = var.rgname
 
   sku {
     tier = "Standard"
@@ -12,7 +12,7 @@ resource "azurerm_app_service_plan" "example" {
 resource "azurerm_app_service" "example" {
   name                = var.appsname
   location            = var.location
-  resource_group_name = var.rgname
+resource_group_name = var.rgname
   app_service_plan_id = azurerm_app_service_plan.example.id
 
   site_config {
