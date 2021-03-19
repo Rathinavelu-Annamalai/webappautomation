@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "rg" {
 module "storage_account" {
   source    = "./modules/storage-account"
 
-  saname    = "stathcldemo21"
+  saname    = "stathcldemo1612"
   rgname    = azurerm_resource_group.rg.name
   location  = azurerm_resource_group.rg.location
 }
