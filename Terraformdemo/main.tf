@@ -12,6 +12,6 @@ module "webapp" {
 
   appsplanname    = "appserplanvhcl90"
 appsname="appservhcl90"
-  rgname    = azurerm_resource_group.rg.name
-  location  = azurerm_resource_group.rg.location
+  rgname    = azurerm_app_service_plan.example.name
+  location  = azurerm_app_service_plan.example.location
 }
