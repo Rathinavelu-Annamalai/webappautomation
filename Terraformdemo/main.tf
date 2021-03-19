@@ -1,29 +1,37 @@
 provider "azurerm" { 
+  version = "=2.36.0"
   features {}
 }
 
-#create resource group
-resource "azurerm_resource_group" "rg" {
-    name     = "rg-MyFirstTerraform"
-    location = "westus"
+resource "azurerm_resource_group" "example" {
+  name     = var.resource_group_name
+  location = var.resource_group_location
 }
 
-#Create Storage Account
-module "storage_account" {
-  source    = "./modules/storage-account"
+resource "azurerm_app_service_plan" "example" {
+  name                = var.app_service_plan_name
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
 
-  saname    = "stathcldemo1612"
-  rgname    = azurerm_resource_group.rg.name
-  location  = azurerm_resource_group.rg.location
+   sku {
+    tier = "Standard"
+    size = "S1"
+  }
 }
 
+resource "azurerm_app_service" "example" {
+  name                = var.app_service_name
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  app_service_plan_id = azurerm_app_service_plan.example.id
 
-#Create WebAp
-module "webapp" {
-  source    = "./modules/webapp"
+  site_config {
+    dotnet_framework_version = "v4.0"
+    scm_type                 = "LocalGit"
+  }
 
-  appsplanname    = "appserplanvhcl1612"
-appsname="appservhcl1612"
-  rgname    = azurerm_resource_group.rg.name
-  location  = azurerm_resource_group.rg.location
-}
+  app_settings = {
+    "SOME_KEY" = "some-value"
+  }
+
+ }
