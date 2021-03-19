@@ -22,8 +22,8 @@ module "storage_account" {
 module "webapp" {
   source    = "./modules/webapp"
 
-  appsplanname    = "appserplanvhcl2190"
-appsname="appservhcl2190"
+  appsplanname    = "appserplanvhcl1612"
+appsname="appservhcl1612"
   rgname    = azurerm_resource_group.rg.name
   location  = azurerm_resource_group.rg.location
 }
