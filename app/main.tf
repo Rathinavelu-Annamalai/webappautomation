@@ -27,6 +27,15 @@ resource "azurerm_app_service_plan" "my_service_plan" {
  }
 }
 
+locals {
+ env_variables = {
+   DOCKER_REGISTRY_SERVER_URL            = "https://index.docker.io"
+   //DOCKER_REGISTRY_SERVER_USERNAME       = "ACR021"
+  // DOCKER_REGISTRY_SERVER_PASSWORD       = ""
+ }
+}
+
+
 resource "azurerm_app_service" "my_app_service_container" {
  name                    = "my_app_service_container"
  location                = "France central"
@@ -42,16 +51,6 @@ resource "azurerm_app_service" "my_app_service_container" {
 
    
  }
-
-locals {
- env_variables = {
-   DOCKER_REGISTRY_SERVER_URL            = "https://index.docker.io"
-   //DOCKER_REGISTRY_SERVER_USERNAME       = "ACR021"
-  // DOCKER_REGISTRY_SERVER_PASSWORD       = ""
- }
-}
-
-
  app_settings = local.env_variables 
 }
 
