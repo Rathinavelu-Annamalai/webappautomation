@@ -13,7 +13,8 @@ provider "azurerm" {
 
 
 
-resource "azurerm_app_service_plan" "my_service_plan" {
+resource "azurerm_app_service_plan" "my_service_plan" 
+{
  name                = "myserviceplan2190"
  location            = "France central"
  resource_group_name = "griffin-resource-name"
@@ -90,7 +91,7 @@ locals {
 
 
 resource "azurerm_app_service" "my_app_service_container" {
- name                    = "myappservicecontainer21"
+ name                    = "myappservicecontainer2190"
  location                = "France central"
  resource_group_name     = "griffin-resource-name"
  app_service_plan_id     = azurerm_app_service_plan.my_service_plan.id
