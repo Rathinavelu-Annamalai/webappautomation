@@ -4,7 +4,7 @@ terraform {
 provider "azurerm" {
  # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
  //version         = "=2.18.0"
- subscription_id = "1d021829-09c2-47de-9160-f9597e6f66ad"
+ //subscription_id = "1d021829-09c2-47de-9160-f9597e6f66ad"
  features {}
  skip_provider_registration = "true"
 
@@ -70,9 +70,9 @@ resource "azurerm_mysql_firewall_rule" "main" {
 
 locals {
  env_variables = {
-   DOCKER_REGISTRY_SERVER_URL            = "https://arc01.azurecr.io"
-   DOCKER_REGISTRY_SERVER_USERNAME       = "ACR021"
-   DOCKER_REGISTRY_SERVER_PASSWORD       = "Puvi@130317"
+   DOCKER_REGISTRY_SERVER_URL            = "https://index.docker.io"
+   //DOCKER_REGISTRY_SERVER_USERNAME       = "ACR021"
+   //DOCKER_REGISTRY_SERVER_PASSWORD       = "Puvi@130317"
    WEBSITES_ENABLE_APP_SERVICE_STORAGE = "false"
     
 
@@ -80,7 +80,7 @@ locals {
     SPRING_PROFILES_ACTIV     = "prod,swagger"
     SPRING_DATASOURCE_URL      = "jdbc:mysql://azurerm_mysql_server.main.fqdn:3306/azurerm_mysql_database.main.name?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC"
     SPRING_DATASOURCE_USERNAME = "azurerm_mysql_server.main.administrator_login@$azurerm_mysql_server.main.name"
-    SPRING_DATASOURCE_PASSWOR = "var.my_sql_master_password"
+    SPRING_DATASOURCE_PASSWOR = "Puvi@130317"
   
  }
 }
@@ -100,7 +100,7 @@ resource "azurerm_app_service" "my_app_service_container" {
    scm_type  = "VSTSRM"
    always_on = "true"
 
-   linux_fx_version  = "DOCKER|arc01.azurecr.io/myapp:latest"#define the images to usecfor you application
+   linux_fx_version  = "DOCKER|index.docker.io/nginx"#define the images to usecfor you application
 
    
  }
