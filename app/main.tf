@@ -64,7 +64,7 @@ resource "azurerm_mysql_database" "main" {
 resource "azurerm_mysql_firewall_rule" "main" {
   name                = "x1-mysql-firewall"
   resource_group_name = "griffin-resource-name"
-  server_name         = "azurerm_mysql_server.main.name"
+  server_name         = azurerm_mysql_server.main.name
   start_ip_address    = "0.0.0.0"
   end_ip_address      = "0.0.0.0"
 }
