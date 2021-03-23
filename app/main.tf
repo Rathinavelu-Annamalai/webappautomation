@@ -13,8 +13,7 @@ provider "azurerm" {
 
 
 
-resource "azurerm_app_service_plan" "my_service_plan" 
-{
+resource "azurerm_app_service_plan" "my_service_plan" {
  name                = "myserviceplan2190"
  location            = "France central"
  resource_group_name = "griffin-resource-name"
