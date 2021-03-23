@@ -27,7 +27,7 @@ resource "azurerm_app_service_plan" "my_service_plan" {
  }
 }
 resource "azurerm_mysql_server" "main" {
-  name                = "${var.prefix}-mysql-server"
+  name                = "sqlserver2190"
   location            = "France central"
   resource_group_name = "griffin-resource-name"
 
@@ -45,25 +45,25 @@ resource "azurerm_mysql_server" "main" {
   }
 
   administrator_login          = "mysqladminun"
-  administrator_login_password = "${var.my_sql_master_password}"
+  administrator_login_password = "Puvi@130317"
   version                      = "5.7"
   ssl_enforcement              = "Disabled"
 }
 
 # This is the database that our application will use
 resource "azurerm_mysql_database" "main" {
-  name                = "${var.prefix}_mysql_db"
+  name                = "hcldb21"
   resource_group_name = "griffin-resource-name"
-  server_name         = "${azurerm_mysql_server.main.name}"
+  server_name         = azurerm_mysql_server.main.name
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
 }
 
 # This rule is to enable the 'Allow access to Azure services' checkbox
 resource "azurerm_mysql_firewall_rule" "main" {
-  name                = "${var.prefix}-mysql-firewall"
+  name                = "x1-mysql-firewall"
   resource_group_name = "griffin-resource-name"
-  server_name         = "${azurerm_mysql_server.main.name}"
+  server_name         = "azurerm_mysql_server.main.name"
   start_ip_address    = "0.0.0.0"
   end_ip_address      = "0.0.0.0"
 }
@@ -78,9 +78,9 @@ locals {
 
     # These are app specific environment variables
     SPRING_PROFILES_ACTIV     = "prod,swagger"
-    SPRING_DATASOURCE_URL      = "jdbc:mysql://${azurerm_mysql_server.main.fqdn}:3306/${azurerm_mysql_database.main.name}?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC"
-    SPRING_DATASOURCE_USERNAME = "${azurerm_mysql_server.main.administrator_login}@${azurerm_mysql_server.main.name}"
-    SPRING_DATASOURCE_PASSWOR = "${var.my_sql_master_password}"
+    SPRING_DATASOURCE_URL      = "jdbc:mysql://azurerm_mysql_server.main.fqdn:3306/azurerm_mysql_database.main.name?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC"
+    SPRING_DATASOURCE_USERNAME = "azurerm_mysql_server.main.administrator_login@$azurerm_mysql_server.main.name"
+    SPRING_DATASOURCE_PASSWOR = "var.my_sql_master_password"
   
  }
 }
