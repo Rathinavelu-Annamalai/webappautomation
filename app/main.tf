@@ -26,6 +26,47 @@ resource "azurerm_app_service_plan" "my_service_plan" {
    capacity = "3"
  }
 }
+resource "azurerm_mysql_server" "main" {
+  name                = "${var.prefix}-mysql-server"
+  location            = "France central"
+  resource_group_name = "griffin-resource-name"
+
+  sku {
+    name     = "B_Gen5_2"
+    capacity = 2
+    tier     = "Basic"
+    family   = "Gen5"
+  }
+
+  storage_profile {
+    storage_mb            = 5120
+    backup_retention_days = 7
+    geo_redundant_backup  = "Disabled"
+  }
+
+  administrator_login          = "mysqladminun"
+  administrator_login_password = "${var.my_sql_master_password}"
+  version                      = "5.7"
+  ssl_enforcement              = "Disabled"
+}
+
+# This is the database that our application will use
+resource "azurerm_mysql_database" "main" {
+  name                = "${var.prefix}_mysql_db"
+  resource_group_name = "${azurerm_resource_group.main.name}"
+  server_name         = "${azurerm_mysql_server.main.name}"
+  charset             = "utf8"
+  collation           = "utf8_unicode_ci"
+}
+
+# This rule is to enable the 'Allow access to Azure services' checkbox
+resource "azurerm_mysql_firewall_rule" "main" {
+  name                = "${var.prefix}-mysql-firewall"
+  resource_group_name = "${azurerm_resource_group.main.name}"
+  server_name         = "${azurerm_mysql_server.main.name}"
+  start_ip_address    = "0.0.0.0"
+  end_ip_address      = "0.0.0.0"
+}
 
 locals {
  env_variables = {
