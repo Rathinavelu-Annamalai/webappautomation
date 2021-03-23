@@ -14,7 +14,7 @@ provider "azurerm" {
 
 
 resource "azurerm_app_service_plan" "my_service_plan" {
- name                = "myserviceplan21"
+ name                = "myserviceplan2190"
  location            = "France central"
  resource_group_name = "griffin-resource-name"
  kind                = "Linux"
@@ -53,7 +53,7 @@ resource "azurerm_mysql_server" "main" {
 # This is the database that our application will use
 resource "azurerm_mysql_database" "main" {
   name                = "${var.prefix}_mysql_db"
-  resource_group_name = "${azurerm_resource_group.main.name}"
+  resource_group_name = "griffin-resource-name"
   server_name         = "${azurerm_mysql_server.main.name}"
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
@@ -62,7 +62,7 @@ resource "azurerm_mysql_database" "main" {
 # This rule is to enable the 'Allow access to Azure services' checkbox
 resource "azurerm_mysql_firewall_rule" "main" {
   name                = "${var.prefix}-mysql-firewall"
-  resource_group_name = "${azurerm_resource_group.main.name}"
+  resource_group_name = "griffin-resource-name"
   server_name         = "${azurerm_mysql_server.main.name}"
   start_ip_address    = "0.0.0.0"
   end_ip_address      = "0.0.0.0"
