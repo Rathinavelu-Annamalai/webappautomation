@@ -2,15 +2,11 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "db-demo-rg-test-sam"
+data "azurerm_resource_group" "example" {
+  name     = "griffin-resource-group"
   location = "Central US"
 
-   tags = {
-      environment="dev"
-      CreatedBy="sampath"
-      ModeOfDeployment="CICD"
-  }
+ 
 }
 
 
