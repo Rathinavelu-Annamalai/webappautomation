@@ -4,7 +4,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "db-demo-rg-test"
-  location = "West Europe"
+  location = "Central US"
 
    tags = {
       environment="dev"
