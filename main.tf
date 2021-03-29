@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "example" {
-  name     = "griffin-resource-group"
+  name     = "appdbwebtest"
   location = "Central US"
 
  
