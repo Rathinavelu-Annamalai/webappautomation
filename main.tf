@@ -15,8 +15,8 @@ resource "azurerm_sql_server" "example" {
   resource_group_name          = "appdbwebtest"
   location                     = "Central US"
   version                      = "12.0"
-  administrator_login          = "admin"
-  administrator_login_password = "admin@1234"
+  administrator_login          = "user1"
+  administrator_login_password = "user@1234"
 }
 
 resource "azurerm_mssql_database" "test" {
