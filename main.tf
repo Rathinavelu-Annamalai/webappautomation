@@ -1,19 +1,19 @@
 provider "azurerm" {
   features {}
 }
-
+/*
 data "azurerm_resource_group" "example" {
   name     = "appdbwebtest"
   location = "Central US"
 
  
-}
+}*/
 
 
 resource "azurerm_sql_server" "example" {
   name                         = "demo-sqlserver"
-  resource_group_name          = azurerm_resource_group.example.name
-  location                     = azurerm_resource_group.example.location
+  resource_group_name          = "appdbwebtest"
+  location                     = "Central US"
   version                      = "12.0"
   administrator_login          = "admin"
   administrator_login_password = "admin@1234"
