@@ -2,7 +2,7 @@ variable "virtual_network_name" {
   description = "Name of the vnet to create"
   }
 
-variable "resource_group_name" {
+variable "resource_group_name" { 
   description = "Default resource group name that the network will be created in."
 }
 
