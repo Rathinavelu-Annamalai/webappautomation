@@ -21,7 +21,13 @@ variable "vnet_name" {
   default     = ""
 }
 
-variable "subnets" {
+variable "subnet_names" {
+  type        = "list"
+  description = "The address prefix to use for the subnet."
+  default     = []
+}
+
+variable "subnet_prefixes" {
   type        = "list"
   description = "The address prefix to use for the subnet."
   default     = []
