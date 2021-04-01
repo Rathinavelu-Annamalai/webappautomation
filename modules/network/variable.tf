@@ -1,5 +1,6 @@
 variable "virtual_network_name" {
   description = "Name of the vnet to create"
+  default="my-demo-vnet"
 }
 
 variable "resource_group_name" {
