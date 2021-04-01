@@ -1,4 +1,4 @@
-variable "vnet_name" {
+variable "virtual_network_name" {
   description = "Name of the vnet to create"
   default     = "my-demo-vnet"
 }
@@ -13,7 +13,7 @@ variable "location" {
   default     = "central us"
 }
 
-variable "address_space" {
+variable "virtual_network_address_space" {
   description = "The address space that is used by the virtual network."
    default     = "["10.0.0.0/16"]"
 }
