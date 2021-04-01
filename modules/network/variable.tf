@@ -1,4 +1,4 @@
-variable "vnet_name" {
+variable "virtual_network_name" {
   description = "Name of the vnet to create"
 }
 
@@ -10,7 +10,7 @@ variable "location" {
   description = "The location/region where the core network will be created."
 }
 
-variable "address_space" {
+variable "virtual_network_address_space" {
   description = "The address space that is used by the virtual network."
 }
 
