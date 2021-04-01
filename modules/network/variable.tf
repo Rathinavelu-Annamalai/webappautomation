@@ -1,6 +1,6 @@
 variable "virtual_network_name" {
   description = "Name of the vnet to create"
-  default="my-demo-vnet"
+  //default="my-demo-vnet"
 }
 
 variable "resource_group_name" {
@@ -21,7 +21,7 @@ variable "subnet_prefixes" {
 
 variable "subnet_names" {
   description = "A list of public subnets inside the vNet."
-  default     = ["subnet1", "subnet2", "subnet3"]
+ // default     = ["subnet1", "subnet2", "subnet3"]
 }
 
 
