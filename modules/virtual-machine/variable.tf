@@ -26,10 +26,10 @@ variable "password" {
   
 }
 
-variable "vm_count" {
+/*variable "vm_count" {
 default= ["1","2"]
 }
 
 variable "server_zones" {
 default=["1","2"]
-}
+}*/
