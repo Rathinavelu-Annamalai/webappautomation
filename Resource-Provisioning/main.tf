@@ -43,9 +43,9 @@ module "application-vnet" {
 module "subnets" {
 source                    = "../modules/subnet"
 //name                      = var.subnet_names[count.index]
-name               = var.subnet_names
+//name               = var.subnet_names
  // virtual_network_name      = module.application-vnet.virtual_network_name
- virtual_network_name     = module.application-vnet.name
+ //virtual_network_name     = module.application-vnet.name
 resource_group_name       = module.rg.name
 //address_prefix            = var.subnet_prefixes[count.index]
 subnet_prefixes           = var.subnet_prefixes
