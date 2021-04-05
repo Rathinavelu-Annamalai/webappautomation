@@ -1,12 +1,12 @@
 
 variable "vnet_name" {
   description = "Name of the vnet to create"
-  default     = "my-demo-vnet"
+  default     = "mydemovnet"
 } 
 
 variable "resource_group_name" {
   description = "Default resource group name that the network will be created in."
-  default     = "my-demo-rgroup"
+  default     = "mydemorgroup"
 }
 
 variable "location" {
