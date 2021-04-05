@@ -1,9 +1,7 @@
-output "name"
-{
-    value= "azurerm_resource_group.name"
+output "name" {
+    value= azurerm_resource_group.name
 }
 
-output "location"
- {
-   value="azurerm_resource_group.location"
+output "location" {
+   value= azurerm_resource_group.location
 }
