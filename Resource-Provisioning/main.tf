@@ -42,7 +42,7 @@ subnet_names                = var.subnet_names[count.index]
 resource_group_name       = data.azurerm_resource_group.rg.name
 //address_prefix            = var.subnet_prefixes[count.index]
 subnet_prefixes           = var.subnet_prefixes[count.index]
-subnet_count              = length(var.subnet_names)
+count              = length(var.subnet_names)
 }
 
 
