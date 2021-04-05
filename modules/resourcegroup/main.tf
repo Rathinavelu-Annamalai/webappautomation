@@ -12,8 +12,8 @@ data "azurerm_resource_group" "example" {
 resource "resource_group_name" "rg"{
     name="mytestrg"
     location="Central US"
-    tags=
-    {
+    tags= {
+      
       CreatedBy="sampath"
       Environment="dev"
       ModeOfDeployment="cicd"
