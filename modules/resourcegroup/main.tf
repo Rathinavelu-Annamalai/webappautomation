@@ -9,11 +9,11 @@ data "azurerm_resource_group" "example" {
  
 }*/
 
-resource "resource_group_name" "rg"{
+resource "azurerm_resource_group" "rg"{
     name="mytestrg"
     location="Central US"
     tags= {
-      
+
       CreatedBy="sampath"
       Environment="dev"
       ModeOfDeployment="cicd"
