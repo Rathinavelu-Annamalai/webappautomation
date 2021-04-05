@@ -21,7 +21,7 @@ data "azurerm_resource_group" "rg" {
 }
 
 module "application-vnet" {
-  source              = "./modules/vnet"
+  source              = "../modules/vnet"
   resource_group_name =  data.azurerm_resource_group.rg.name
   location            = data.azurerm_resource_group.rg.location
   vnet_name           = "${var.vnet_name}"
@@ -34,7 +34,7 @@ module "application-vnet" {
 }
 
 module "subnets" {
-source                    = "./modules/subnet"
+source                    = "../modules/subnet"
 name                      = var.subnet_names[subnet_count.index]
 virtual_network_name      = module.application-vnet.virtual_network_name
 resource_group_name       = data.azurerm_resource_group.rg.name
