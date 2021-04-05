@@ -10,8 +10,8 @@ variable "location" {
 
 variable "tags" {
   description = "The tags to associate the resource we are creating"
-  type        = "map"
-  default     = {}
+  //type        = "map"
+  default     = ""
 }
 
 # Everything below is for the module
@@ -22,15 +22,15 @@ variable "vnet_name" {
 }
 
 variable "subnet_names" {
-  type        = "list"
+  type        = "string"
   description = "The address prefix to use for the subnet."
-  default     = []
+  default     = ""
 }
 
 variable "subnet_prefixes" {
-  type        = "list"
+  type        = "string"
   description = "The address prefix to use for the subnet."
-  default     = []
+  default     = ""
 }
 
 variable "add_endpoint" {
