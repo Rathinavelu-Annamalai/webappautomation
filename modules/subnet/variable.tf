@@ -27,7 +27,7 @@ variable "subnet_names" {
   default     = ""
 }
 
-variable "subnet_prefixes" {
+variable "subnet_prefix" {
   type        = "string"
   description = "The address prefix to use for the subnet."
   default     = ""
