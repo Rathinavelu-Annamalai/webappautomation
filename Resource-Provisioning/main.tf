@@ -9,27 +9,35 @@ terraform {
   }
 }
 
-resource "azurerm_resource_group" "resource_group" {
+/*resource "azurerm_resource_group" "resource_group" {
   name     = "${var.resource_group_name}"
   location = "${var.location}"
   tags     = "${var.default_tags}"
+} */
 
+data "azurerm_resource_group" "rg" {
+  name                = var.resource_group_name
+  location            = var.location
 }
 
 module "application-vnet" {
   source              = "./modules/vnet"
-  resource_group_name = "${azurerm_resource_group.resource_group.name}"
-  location            = "${var.location}"
-  tags                =  "${var.default_tags}"
+  resource_group_name =  data.azurerm_resource_group.rg.name
+  location            = data.azurerm_resource_group.rg.location
   vnet_name           = "${var.vnet_name}"
   address_space       = "${var.address_space}"
+  tags= {
+   Environment = "dev"
+   CreatedBy= "sampath"
+   ModeOfDeployment = "cicd"
+  }
 }
 
 module "subnets" {
 source                    = "./modules/subnet"
 name                      = var.subnet_names[count.index]
-virtual_network_name      = var.vnet_name
-resource_group_name       = "${azurerm_resource_group.resource_group.name}"
+virtual_network_name      = module.application-vnet.virtual_network_name
+resource_group_name       = data.azurerm_resource_group.rg.name
 address_prefix            = var.subnet_prefixes[count.index]
 count                     = length(var.subnet_names)
 }
