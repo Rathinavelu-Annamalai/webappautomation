@@ -18,13 +18,13 @@ variable "tags" {
 
 variable "vnet_name" {
   description = "Name of the vnet to create the subnets in"
-  default     = ""
+  default     = "my-demo-vnet"
 }
 
 variable "subnet_name" {
   type        = "string"
   description = "The address prefix to use for the subnet."
-  default     = ""
+  default     = "subnet1"
 }
 
 variable "subnet_prefix" {
