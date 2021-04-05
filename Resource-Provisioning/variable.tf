@@ -32,4 +32,8 @@ variable "subnet_names" {
 variable "tags" {
  default=""
 }
+
+variable "subnet_count" {
+  default=""
+}
   
