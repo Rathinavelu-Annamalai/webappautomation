@@ -6,7 +6,7 @@ variable "vnet_name" {
 
 variable "resource_group_name" {
   description = "Default resource group name that the network will be created in."
-  default     = "demorg21"
+  default     = "my-demo-rg"
 }
 
 variable "location" {
