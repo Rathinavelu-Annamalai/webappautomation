@@ -10,8 +10,8 @@ data "azurerm_resource_group" "example" {
 }*/
 
 resource "azurerm_resource_group" "rg"{
-    name="mytestrg"
-    location="Central US"
+    name=var.azurerm_resource_group
+    location=var.location
     tags= {
 
       CreatedBy="sampath"
