@@ -24,11 +24,7 @@ module "rg" {
 source= "../modules/resourcegroup"
 resource_group_name=var.resource_group_name
 location=var.location
-tags= {
-   Environment = "dev"
-   CreatedBy= "sampath"
-   ModeOfDeployment = "cicd"
-  }
+
 }
 
 module "application-vnet" {
