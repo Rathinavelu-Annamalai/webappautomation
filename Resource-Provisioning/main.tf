@@ -48,7 +48,7 @@ source                    = "../modules/subnet"
  //virtual_network_name     = module.application-vnet.name
 resource_group_name       = module.rg.name
 //address_prefix            = var.subnet_prefixes[count.index]
-subnet_prefixes           = var.subnet_prefixes
+address_prefix          = var.subnet_prefixes
 // count              = length(var.subnet_names)
 }
 
