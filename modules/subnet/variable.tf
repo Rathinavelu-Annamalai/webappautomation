@@ -21,16 +21,16 @@ variable "vnet_name" {
   default     = "my-demo-vnet"
 }
 
-variable "subnet_name" {
-  type        = "string"
+variable "subnet_names" {
+  type        = list(string)
   description = "The address prefix to use for the subnet."
-  default     = "subnet1"
+  default     = []
 }
 
-variable "subnet_prefix" {
-  type        = "string"
+variable "subnet_prefixes" {
+  type        = list(string)
   description = "The address prefix to use for the subnet."
-  default     = ""
+  default     = []
 }
 
 variable "add_endpoint" {
