@@ -1,11 +1,12 @@
-/*variable "virtual_network_name" {
+
+variable "vnet_name" {
   description = "Name of the vnet to create"
-  //default     = "my-demo-vnet"
-} */
+  default     = "my-demo-vnet"
+} 
 
 variable "resource_group_name" {
   description = "Default resource group name that the network will be created in."
-  default     = "my-demo-rg"
+  default     = "demorg21"
 }
 
 variable "location" {
@@ -13,7 +14,7 @@ variable "location" {
   default     = "central us"
 }
 
-variable "virtual_network_address_space" {
+variable "address_space" {
   description = "The address space that is used by the virtual network."
    default     = "["10.0.0.0/16"]"
 }
@@ -23,10 +24,10 @@ variable "subnet_prefixes" {
   default     = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
 }
 
-/*variable "subnet_names" {
+variable "subnet_names" {
   description = "A list of public subnets inside the vNet."
   default     = ["subnet1", "subnet2", "subnet3"]
-}*/
+}
 
 
 
