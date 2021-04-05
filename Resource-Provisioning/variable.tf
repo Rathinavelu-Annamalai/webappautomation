@@ -29,6 +29,7 @@ variable "subnet_names" {
   default     = ["subnet1", "subnet2", "subnet3"]
 }
 
-
-
-
+variable "tags" {
+ default=""
+}
+  
