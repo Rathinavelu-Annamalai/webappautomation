@@ -1,15 +1,9 @@
- terraform {
-  required_version = ">= 0.11" 
- backend "azurerm" {
-    storage_account_name = "__terraformstorageaccount__"
-    container_name       = "terraform"
-    key                  = "terraform.tfstate"
-	access_key  ="__storagekey__"
-    features{}
-	}
-	}
+ //terraform {
+  //required_version = ">= 0.11" 
+ 
+	//}
   provider "azurerm" {
-    version = "=2.0.0"
+//    version = " "
 features {}
 }
 
