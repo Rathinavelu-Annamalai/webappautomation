@@ -1,9 +1,9 @@
 variable "resource_group_name" {
   description = "The name of the resource group we want to use"
-  default     = ""
+  default     = "demorg21"
 }
 
 variable "location" {
   description = "The location/region where we are crrating the resource"
-  default     = ""
+  default     = "Central US"
 }
