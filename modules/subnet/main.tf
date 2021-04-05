@@ -4,7 +4,7 @@ resource "azurerm_subnet" "subnet" {
   virtual_network_name                = var.vnet_name
   resource_group_name       = var.resource_group_name
   //address_prefix            = var.subnet_prefixes[count.index]
-  address_prefix            = var.subnet_prefixes
+  address_prefix            = var.subnet_prefix
   //count              = length(var.subnet_names)
 }
 
