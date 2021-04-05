@@ -35,10 +35,10 @@ module "application-vnet" {
 
 module "subnets" {
 source                    = "../modules/subnet"
-name                      = var.subnet_names[subnet_count.index]
+name                      = var.subnet_names[count.index]
 virtual_network_name      = module.application-vnet.virtual_network_name
 resource_group_name       = data.azurerm_resource_group.rg.name
-address_prefix            = var.subnet_prefixes[subnet_count.index]
+address_prefix            = var.subnet_prefixes[count.index]
 subnet_count              = length(var.subnet_names)
 }
 
