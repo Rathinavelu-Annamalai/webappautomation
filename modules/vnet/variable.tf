@@ -17,7 +17,7 @@ variable "tags" {
 
 variable "vnet_name" {
   description = "Name of the vnet to create"
-  default     = ""
+  default     = "my-demo-vnet"
 }
 
 variable "address_space" {
