@@ -22,7 +22,7 @@ terraform {
 
 module "rg" {
 source= "../modules/resourcegroup"
-//name=var.resource_group_name
+name=var.resource_group_name
 location=var.location
 
 }
