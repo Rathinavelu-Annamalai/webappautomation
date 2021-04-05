@@ -24,8 +24,8 @@ module "application-vnet" {
   source              = "../modules/vnet"
   resource_group_name =  data.azurerm_resource_group.rg.name
   location            = data.azurerm_resource_group.rg.location
-  vnet_name           = "${var.vnet_name}"
-  address_space       = "${var.address_space}"
+  vnet_name           = var.vnet_name
+  address_space       = var.address_space
   tags= {
    Environment = "dev"
    CreatedBy= "sampath"
