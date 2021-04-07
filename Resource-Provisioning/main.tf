@@ -1,6 +1,10 @@
 terraform {
   required_version = ">= 0.12.0"
 }
+provider "azurerm" {
+features {}
+}
+
 
 resource "azurerm_resource_group" "resource_group" {
   name     = "${var.application}-${var.environment}"
