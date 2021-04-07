@@ -7,7 +7,11 @@ variable "location" {
   description = "The location/region where we are creating the resource"
   default     = ""
 }
-
+variable "tags" {
+  description = "The tags to associate the resource we are creating"
+  type        = "map"
+  default     = {}
+}
 # Everything below is for the module
 
 variable "vnet_name" {
