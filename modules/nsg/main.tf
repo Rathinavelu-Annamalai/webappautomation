@@ -1,7 +1,9 @@
 resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
-  location            = azurerm_resource_group.dev.location
-  resource_group_name = azurerm_resource_group.dev.name
+  //location            = azurerm_resource_group.dev.location
+  location            = "${var.location}"
+  //resource_group_name = "${azurerm_resource_group.dev.name}""
+  resource_group_name = "${var.resource_group_name}"
 
   security_rule {
     name                       = "allow https"
@@ -21,7 +23,4 @@ resource "azurerm_network_security_group" "example" {
   }
 }
 
-resource "azurerm_subnet_network_security_group_association" "example" {
-  subnet_id                 = azurerm_subnet.integrationsubnet.id
-  network_security_group_id = azurerm_network_security_group.example.id
-}
+
