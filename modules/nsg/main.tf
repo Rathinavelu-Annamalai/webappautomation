@@ -1,5 +1,7 @@
 resource "azurerm_network_security_group" "example" {
-  name                = "example-nsg"
+  //name                = "example-nsg"
+  name="${var.nsg[count.index]}"
+  count=length(var.nsg_name)
   //location            = azurerm_resource_group.dev.location
   location            = "${var.location}"
   //resource_group_name = "${azurerm_resource_group.dev.name}""
