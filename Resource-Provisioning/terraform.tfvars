@@ -1,6 +1,6 @@
 application = "tfworkspaces"
 environment = "workspaces"
-location    = "westeurope"
+location    = "Central US"
 
 
 address_space = "10.134.0.0/16"
