@@ -24,13 +24,14 @@ variable "vnet_name" {
 variable "subnet_names" {
   type        = list(string)
   description = "The address prefix to use for the subnet."
-  default     = []
+  default     = ["subnet1", "subnet2", "subnet3"]
+
 }
 
 variable "subnet_prefixes" {
   type        = list(string)
   description = "The address prefix to use for the subnet."
-  default     = []
+  default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 }
 
 variable "add_endpoint" {
