@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 module "application-vnet" {
-  source              = "./modules/vnet"
+  source              = "../modules/vnet"
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
   location            = "${var.location}"
     vnet_name           = "${azurerm_resource_group.resource_group.name}-vnet"
@@ -21,7 +21,7 @@ module "application-vnet" {
 }
 
 module "application-subnets" {
-  source              = "./modules/subnet"
+  source              = "../modules/subnet"
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
   location            = "${var.location}"
     vnet_name           = "${module.application-vnet.vnet_name}"
