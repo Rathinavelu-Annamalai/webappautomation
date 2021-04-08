@@ -18,7 +18,7 @@ variable "vnet_name" {
 }
 
 variable "subnets" {
-  type        = "list"
+  type        = list(string)
   description = "The address prefix to use for the subnet."
   default     = []
 }
