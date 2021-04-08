@@ -17,7 +17,7 @@ variable "address_space" {
 
 variable "subnet" {
   description = ""
-  type= list(string)
+  type= "list(string)"
   default     = []
 }
 
