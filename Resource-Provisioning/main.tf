@@ -32,11 +32,11 @@ module "application-webapp" {
   appsplanname ="appserviceplan2190"
   
 }
-resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
+/*resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
 	  app_service_id  = "${module.application-webapp.appservice_id.id}"
         subnet_id="${module.application-subnets.subnet.id}"
 
-	}
+	}*/
 	
 module "application-subnets" {
   source              = "../modules/subnet"
