@@ -28,7 +28,7 @@ module "application-webapp" {
   source              = "../modules/webapp"
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
   location            = "${var.location}"
-  appsname                = "__appservicename__"
+  appsname                = "appservicename"
   appsplanname ="__appserviceplan__"
   
 }
