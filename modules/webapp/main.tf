@@ -41,9 +41,11 @@ resource "azurerm_app_service_plan" "dev" {
 	  }
 	
 	}
-	/*resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
-	  app_service_id  = azurerm_app_service.dev.id
-        subnet_id="${module.application-subnets.subnet_id}"
+	resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
+	   source="../modules/subnet"
+	   app_service_id  = "${azurerm_app_service.dev.id}"
+       //subnet_id="${module.application-subnets.subnet.id}"
+	   subnet_id="${azurerm_subnet.subnet.id}"
       
-	}*/
+	}
 	
