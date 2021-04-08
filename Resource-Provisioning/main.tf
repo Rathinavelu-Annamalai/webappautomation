@@ -50,7 +50,7 @@ resource "azurerm_network_security_group" "example" {
   //resource_group_name = "${azurerm_resource_group.dev.name}""
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
 
-  security_rule = [
+ /* security_rule = [
     {
     name                       = "allow https"
     priority                   = 100
@@ -73,7 +73,7 @@ resource "azurerm_network_security_group" "example" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
    }
-]
+] */
 
 }
 
