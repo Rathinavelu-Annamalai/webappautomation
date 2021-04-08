@@ -20,8 +20,7 @@ resource "azurerm_network_security_group" "example" {
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
 
-  security_rule = 
-  {
+  security_rule = {
     name                       = "test123"
     priority                   = 100
     direction                  = "Inbound"
