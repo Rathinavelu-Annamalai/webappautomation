@@ -15,12 +15,12 @@ resource "azurerm_subnet" "subnet" {
   service_endpoints    = ["${lookup(var.subnets[count.index], "service_endpoint", "")}"]
 }*/
 
-resource "azurerm_network_security_group" "example" {
+/*resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
 
-  /*security_rule = 
+  security_rule = 
   {
     name                       = "test123"
     priority                   = 100
@@ -42,7 +42,7 @@ resource "azurerm_network_security_group" "example" {
     destination_port_range     = "*"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
-  }*/
+  }
    tags = {
    environment = "dev"
    createdby="poorani"
@@ -53,4 +53,4 @@ resource "azurerm_network_security_group" "example" {
 resource "azurerm_subnet_network_security_group_association" "example" {
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.example.id
-}
+}*/
