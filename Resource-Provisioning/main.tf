@@ -30,7 +30,14 @@ module "application-webapp" {
   location            = "${var.location}"
   appsname                = "__appservicename__"
   appsplanname ="__appserviceplan__"
+  
 }
+resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
+	  app_service_id  = "${module.application-webapp.subnet_id}"
+        subnet_id="${module.application-subnets.subnet_id}"
+      
+	}
+	
 module "application-subnets" {
   source              = "../modules/subnet"
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
