@@ -17,11 +17,22 @@ variable "vnet_name" {
   default     = ""
 }
 
-variable "subnets" {
+/*variable "subnets" {
   type        = "list"
   description = "The address prefix to use for the subnet."
   default     = []
+}*/
+
+variable "subnet_name" {
+  description = "The address prefix to use for the subnet."
+  default     = 
 }
+
+variable "subnet_prefix" {
+  description = "The address prefix to use for the subnet."
+  default     = ""
+}
+
 
 variable "add_endpoint" {
   description = "should we be adding an endpint, leave this as is"
