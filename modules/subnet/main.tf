@@ -14,3 +14,44 @@ resource "azurerm_subnet" "subnet" {
   address_prefix       = "${lookup(var.subnets[count.index], "prefix", "")}"
   service_endpoints    = ["${lookup(var.subnets[count.index], "service_endpoint", "")}"]
 }*/
+resource "azurerm_network_security_group" "example" {
+  name                = "example-nsg"
+ // name="${var.nsg_names[count.index]}"
+  //count=length(var.nsg_names)
+  //location            = azurerm_resource_group.dev.location
+  location            = "${var.location}"
+  //resource_group_name = "${azurerm_resource_group.dev.name}""
+  resource_group_name = "${var.resource_group_name}"
+
+ /* security_rule = [
+    {
+    name                       = "allow https"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "443"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+   },
+   {
+    name                       = "allow http"
+    priority                   = 101
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+   }
+] */
+
+}
+
+  
+  resource "azurerm_subnet_network_security_group_association" "example" {
+  subnet_id                 = "${azurerm_subnet.subnet.id}"
+  network_security_group_id = azurerm_network_security_group.example.id
+} 
