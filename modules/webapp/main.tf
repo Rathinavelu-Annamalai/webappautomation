@@ -1,9 +1,12 @@
 resource "azurerm_app_service_plan" "dev" {
 	  name                = var.appsplanname
 	  //location            = "Central US" 
-	  location="${azurerm_resource_group.dev.location}"
+      location            = "${var.location}"
+      resource_group_name = "${var.resource_group_name}"
+	  //location="${azurerm_resource_group.dev.location}"
 	  //resource_group_name = "appdbwebtest"
-	resource_group_name="${azurerm_resource_group.dev.name}"
+	//resource_group_name="${azurerm_resource_group.dev.name}"
+    
 	
 	  sku {
 	    tier = "Premiumv2"
@@ -18,8 +21,10 @@ resource "azurerm_app_service_plan" "dev" {
 	}
 	resource "azurerm_app_service" "dev" {
 	  name                = var.appsname
-	  location            = azurerm_app_service_plan.dev.location
-	  resource_group_name =  azurerm_app_service_plan.dev.resource_group_name
+      location            = "${var.location}"
+      resource_group_name = "${var.resource_group_name}"
+	  //location            = azurerm_app_service_plan.dev.location
+	  //resource_group_name =  azurerm_app_service_plan.dev.resource_group_name
 	  app_service_plan_id = "${azurerm_app_service_plan.dev.id}"
 	  depends_on = [azurerm_app_service_plan.dev]
       //, azurerm_monitor_autoscale_setting.asplan1]
