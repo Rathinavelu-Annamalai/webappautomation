@@ -17,7 +17,8 @@ variable "address_space" {
 
 variable "subnet" {
   description = ""
-  default     = ""
+  type= list
+  default     = []
 }
 
 variable "application" {
