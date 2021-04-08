@@ -9,6 +9,11 @@ variable "location" {
 }
 
 
+variable "add_endpoint" {
+  description = "should we be adding an endpint, leave this as is"
+  default     = false
+}
+
 
 variable "address_space" {
   description = ""
