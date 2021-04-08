@@ -13,6 +13,7 @@ resource "azurerm_subnet" "subnet-endpoint" {
   virtual_network_name = "${var.vnet_name}"
   address_prefix       = "${lookup(var.subnets[count.index], "prefix", "")}"
   service_endpoints    = ["${lookup(var.subnets[count.index], "service_endpoint", "")}"]
+}
 
 /*resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
