@@ -29,11 +29,13 @@ module "application-subnets" {
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
   location            = "${var.location}"
     vnet_name           = "${module.application-vnet.vnet_name}"
+    count= length(var.subnet)
 
   subnets = [
     {
       name   = "${azurerm_resource_group.resource_group.name}-subnet"
-      prefix = "${var.subnet}"
+      //prefix = "${var.subnet}"
+      prefix = "${var.subnet[count.index]}"
     }
   ]
 }
