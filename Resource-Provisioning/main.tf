@@ -28,8 +28,8 @@ module "application-webapp" {
   source              = "../modules/webapp"
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
   location            = "${var.location}"
-  appsname                = "appservicename"
-  appsplanname ="__appserviceplan__"
+  appsname                = "appservicename2190"
+  appsplanname ="appserviceplan2190"
   
 }
 resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
