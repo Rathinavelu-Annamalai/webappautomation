@@ -29,7 +29,8 @@ module "application-subnets" {
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
   location            = "${var.location}"
     vnet_name           = "${module.application-vnet.vnet_name}"
-    count= length(var.subnet)
+    //count= length(var.subnet)
+    count                = "${var.add_endpoint != true ? length(var.subnets) : 0}"
 
   subnets = [
     {
