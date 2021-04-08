@@ -1,5 +1,5 @@
-application = "tfworkspaces"
-environment = "workspaces"
+application = "demo"
+environment = "rgtest"
 location    = "Central US"
 
 
