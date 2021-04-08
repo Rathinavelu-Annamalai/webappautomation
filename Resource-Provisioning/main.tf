@@ -30,7 +30,7 @@ module "application-subnets" {
   location            = "${var.location}"
     vnet_name           = "${module.application-vnet.vnet_name}"
     //count= length(var.subnet)
-    count                = "${var.add_endpoint != true ? length(var.subnets) : 0}"
+    count                = "${var.add_endpoint != true ? length(var.subnet) : 0}"
 
   subnets = [
     {
