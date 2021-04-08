@@ -24,6 +24,13 @@ module "application-vnet" {
   address_space       = "${var.address_space}"
 }
 
+module "application-webapp" {
+  source              = "../modules/webapp"
+  resource_group_name = "${azurerm_resource_group.resource_group.name}"
+  location            = "${var.location}"
+  appsname                = "__appservicename__"
+  appsplanname ="__appserviceplan__"
+}
 module "application-subnets" {
   source              = "../modules/subnet"
   resource_group_name = "${azurerm_resource_group.resource_group.name}"
