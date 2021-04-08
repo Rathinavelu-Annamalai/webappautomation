@@ -20,7 +20,7 @@ variable "address_space" {
   default     = ""
 }
 
-variable "subnet" {
+variable "subnets" {
   description = ""
   type= list(string)
   default     = []
