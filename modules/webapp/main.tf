@@ -44,7 +44,7 @@ resource "azurerm_app_service_plan" "dev" {
 	resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
 	   source="../modules/subnet"
 	   app_service_id  = "${azurerm_app_service.dev.id}"
-        subnet_id="${var.subnets.id}"
+        subnet_id="${var.subnet_name.id}"
 	   //subnet_id="${azurerm_subnet.subnet.id}"
       
 	}
