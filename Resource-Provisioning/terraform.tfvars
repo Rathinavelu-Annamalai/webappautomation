@@ -1,5 +1,5 @@
-application = "tfworkspaces"
-environment = "workspaces"
+application = "myapp"
+environment = "env"
 location    = "Central US"
 
 
