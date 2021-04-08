@@ -35,7 +35,7 @@ module "application-subnets" {
   subnets = [
     {
       name   = "${azurerm_resource_group.resource_group.name}-subnet"
-       prefix = "${var.subnets}"
+       prefix = "${var.subnet}"
       //prefix = "${var.subnets[count.index]}"
     }
   ]
