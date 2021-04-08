@@ -39,8 +39,4 @@ module "application-subnets" {
 }
 
   
-  resource "azurerm_subnet_network_security_group_association" "example" {
-  source= "../modules/nsg"
-  subnet_id                 = "${module.application-subnets.subnet_id}"
-  network_security_group_id = azurerm_network_security_group.example.id
-}
+ 
