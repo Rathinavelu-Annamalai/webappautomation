@@ -44,12 +44,12 @@ module "application-subnets" {
   location            = "${var.location}"
   vnet_name           = "${module.application-vnet.vnet_name}"
   address_prefix= "${var.subnet_prefix}"
-  subnets = [
+  /*subnets = [
     {
       name   = "${azurerm_resource_group.resource_group.name}-subnet"
       prefix = "${var.subnet}"
     }
-  ]
+  ]*/
 }
 
   
