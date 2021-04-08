@@ -41,7 +41,7 @@ module "application-subnets" {
   ]
 }
 
-/*resource "azurerm_network_security_group" "example" {
+resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
  // name="${var.nsg_names[count.index]}"
   //count=length(var.nsg_names)
@@ -81,4 +81,4 @@ module "application-subnets" {
   resource "azurerm_subnet_network_security_group_association" "example" {
   subnet_id                 = "${module.application-subnets.subnet_id}"
   network_security_group_id = azurerm_network_security_group.example.id
-} */
+} 
