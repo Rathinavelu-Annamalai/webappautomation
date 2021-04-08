@@ -12,5 +12,5 @@ output "vnet_subnet_names" {
 output "subnet_id" {
   description = "The ids of subnets created inside the new vNet"
   //value       = "${azurerm_subnet.subnet.0.id}"
-  value       = "${azurerm_subnet.subnet_id}"
+  value       = "${azurerm_subnet.subnet.id}"
 }
