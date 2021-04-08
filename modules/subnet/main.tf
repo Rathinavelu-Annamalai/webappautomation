@@ -3,7 +3,7 @@ resource "azurerm_subnet" "subnet" {
   resource_group_name  = "${var.resource_group_name}"
   name                 = "${lookup(var.subnets[count.index], "name", "")}"
   virtual_network_name = "${var.vnet_name}"
-  address_prefix       = "${lookup(var.subnets[count.index], "prefix", "")}"
+  address_prefixes       = "${lookup(var.subnets[count.index], "prefix", "")}"
 }
 
 /*resource "azurerm_subnet" "subnet-endpoint" {
