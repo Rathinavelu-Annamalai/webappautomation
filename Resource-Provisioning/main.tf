@@ -36,7 +36,7 @@ module "application-subnets" {
     {
       name   = "${azurerm_resource_group.resource_group.name}-subnet"
       //prefix = "${var.subnet}"
-      prefix = "${var.subnet}"
+      prefix = "${var.subnets}"
     }
   ]
 }
