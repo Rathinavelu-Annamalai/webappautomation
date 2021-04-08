@@ -15,7 +15,7 @@ resource "azurerm_subnet" "subnet-endpoint" {
   service_endpoints    = ["${lookup(var.subnets[count.index], "service_endpoint", "")}"]
 }
 
-/*resource "azurerm_network_security_group" "example" {
+resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
@@ -53,4 +53,4 @@ resource "azurerm_subnet" "subnet-endpoint" {
 resource "azurerm_subnet_network_security_group_association" "example" {
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.example.id
-}*/
+}
