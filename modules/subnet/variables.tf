@@ -25,7 +25,7 @@ variable "vnet_name" {
 
 variable "subnet_name" {
   description = "The address prefix to use for the subnet."
-  default     = 
+  default     = ""
 }
 
 variable "subnet_prefix" {
