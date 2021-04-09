@@ -119,13 +119,13 @@ resource "azurerm_app_service_plan" "dev" {
 	    email {
 	      send_to_subscription_administrator    = false
 	      send_to_subscription_co_administrator = false
-	      custom_emails                         = ["poorani.kamalakannan@allianzlife.com"]
+	      custom_emails                         = ["sampath.palanisamy@allianzlife.com"]
 	    }
 	  }
 	    depends_on = [azurerm_app_service_plan.dev]
 	    tags = {
 	    environment = "dev"
-	    createdby="poorani"
+	    createdby="sampath"
 	    modeofdeployment= "azurecicd"
 	  }
 	}
