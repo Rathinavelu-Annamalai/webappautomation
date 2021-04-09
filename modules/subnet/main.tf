@@ -13,7 +13,7 @@ resource "azurerm_subnet" "subnet" {
   //name                 = "[var.subnet_names[count.index]]"
   virtual_network_name = "${var.vnet_name}"
   //address_prefixes     = "${var.subnet_address_prefixes[count.index]}"
-  address_prefixes     = "[var.subnet_address_prefixes[count.index]]"
+  address_prefixes     = "["${var.subnet_address_prefixes[count.index]}"]"
 } 
 
 
