@@ -44,17 +44,21 @@ variable "environment" {
 }*/
 
 variable "appserviceplan" {
-
+description = ""
+default     = ""
 }
 
 variable "appservicename" {
-
+description = ""
+ default     = ""
 }
 
 variable "appinsightname" {
-
+description = ""
+  default     = ""
 }
 
 variable "azuremonitorname" {
-    
+ description = ""
+  default     = ""   
 }
