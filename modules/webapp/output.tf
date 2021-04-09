@@ -5,10 +5,10 @@ output "asp_id" {
   value = azurerm_app_service_plan.dev.id
 }
 output "asp_rg" {
-    value = azurerm_resource_group.dev.name
+    value = azurerm_app_service_plan.dev.resource_group_name
 }
 output "asp_location" {
-    value = azurerm_resource_group.dev.location
+    value = azurerm_app_service_plan.dev.location
 }
 output "appservice_id" {
     value = azurerm_app_service.dev.id
