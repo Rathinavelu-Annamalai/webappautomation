@@ -10,19 +10,11 @@ resource "azurerm_subnet" "subnet" {
   resource_group_name  = "${var.resource_group_name}"
   name                 = "${var.subnet_name}"
   virtual_network_name = "${var.vnet_name}"
-  address_prefix       = "${var.subnet_prefix}"
+  address_prefixes       = "${var.subnet_prefix}"
 } 
 
 
-/*resource "azurerm_subnet" "subnet-endpoint" {
-  count                = "${var.add_endpoint == true ? length(var.subnets) : 0}"
-  resource_group_name  = "${var.resource_group_name}"
-  name                 = "${lookup(var.subnets[count.index], "name", "")}"
-  virtual_network_name = "${var.vnet_name}"
-  address_prefix       = "${lookup(var.subnets[count.index], "prefix", "")}"
-  service_endpoints    = ["${lookup(var.subnets[count.index], "service_endpoint", "")}"]
-}*/
-resource "azurerm_network_security_group" "example" {
+/*resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
  // name="${var.nsg_names[count.index]}"
   //count=length(var.nsg_names)
@@ -31,7 +23,7 @@ resource "azurerm_network_security_group" "example" {
   //resource_group_name = "${azurerm_resource_group.dev.name}""
   resource_group_name = "${var.resource_group_name}"
 
- /* security_rule = [
+  security_rule = [
     {
     name                       = "allow https"
     priority                   = 100
@@ -54,7 +46,7 @@ resource "azurerm_network_security_group" "example" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
    }
-] */
+] 
 
 }
 
@@ -62,4 +54,4 @@ resource "azurerm_network_security_group" "example" {
   resource "azurerm_subnet_network_security_group_association" "example" {
     subnet_id                 = "${azurerm_subnet.subnet.id}"
   network_security_group_id = azurerm_network_security_group.example.id
-} 
+} */
