@@ -56,11 +56,12 @@ resource "azurerm_network_security_group" "example" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
    }*/
-   tags = {
+   /*tags = {
    environment = "dev"
    createdby="sampath"
    modeofdeployment= "azurecicd"
-  }
+  }*/
+  tags = var.tags
 }
   
  resource "azurerm_subnet_network_security_group_association" "example" {
