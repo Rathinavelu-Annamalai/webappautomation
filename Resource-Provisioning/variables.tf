@@ -20,15 +20,15 @@ variable "address_space" {
   default     = ""
 }
 
-variable "subnet_name" {
+variable "subnet_names" {
   description = ""
-  //type= list(string)
+  type= list(string)
   default     = ""
 }
 
-variable "subnet_prefix" {
+variable "subnet_address_prefixes" {
   description = ""
-  //type= list(string)
+  type= list(string)
   default     = ""
 }
 
