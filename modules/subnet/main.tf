@@ -9,7 +9,8 @@
 resource "azurerm_subnet" "subnet" {
   count                = length(var.subnet_names)
   resource_group_name  = "${var.resource_group_name}"
-  name                 = "${var.subnet_names[count.index]}"
+  //name                 = "${var.subnet_names[count.index]}"
+  name                 = "[var.subnet_names[count.index]]"
   virtual_network_name = "${var.vnet_name}"
   //address_prefixes     = "${var.subnet_address_prefixes[count.index]}"
   address_prefixes     = "[var.subnet_address_prefixes[count.index]]"
