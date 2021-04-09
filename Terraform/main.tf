@@ -17,9 +17,9 @@ terraform {
 	  //name     = "dev-rg-cu-plutus-webapp21"
 	  location = "Central US"
 	  tags = {
-	   environment = "dev"
-	   createdby="poorani"
-	  modeofdeployment= "azurecicd"
+	   environment = "dev-demo"
+	   createdby="terraform"
+	  modeofdeployment= "auto"
 	  }
 	}
 	
