@@ -21,7 +21,7 @@ resource "azurerm_network_security_group" "example" {
  resource_group_name = "${var.resource_group_name}"
 
   security_rule {
-    name                       = "allow https"
+    name                       = "allowhttps"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
@@ -32,7 +32,7 @@ resource "azurerm_network_security_group" "example" {
     destination_address_prefix = "*"
    }
    /*{
-    name                       = "allow http"
+    name                       = "allowhttp"
     priority                   = 101
     direction                  = "Inbound"
     access                     = "Allow"
