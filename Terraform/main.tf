@@ -54,7 +54,7 @@ terraform {
 	  resource_group_name = azurerm_resource_group.dev.name
 	
 	  security_rule {
-	    name                       = "test123"
+	    name                       = "nsgrule1"
 	    priority                   = 100
 	    direction                  = "Inbound"
 	    access                     = "Allow"
