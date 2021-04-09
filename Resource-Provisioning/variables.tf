@@ -32,7 +32,7 @@ variable "subnet_prefix" {
   default     = ""
 }
 
-variable "application" {
+/*variable "application" {
   description = ""
   default     = ""
 }
@@ -40,4 +40,4 @@ variable "application" {
 variable "environment" {
   description = ""
   default     = ""
-}
+}*/
