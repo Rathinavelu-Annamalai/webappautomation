@@ -8,11 +8,12 @@ resource "azurerm_app_service_plan" "dev" {
 	    tier = "Premiumv2"
 	    size = "P1v2"
 	  }
-	    tags = {
+	   /* tags = {
 	    environment = "dev"
 	    createdby="sampath"
 	    modeofdeployment= "azurecicd"
-	  }
+	  } */
+	  tags = var.tags
 	
 	}
 	
@@ -22,11 +23,12 @@ resource "azurerm_app_service_plan" "dev" {
 	  location            =  "${var.location}"
 	  resource_group_name="${var.resource_group_name}"
 	  application_type    = "web"
-	tags = {
+	/* tags = {
 	    environment = "dev"
 	    createdby="sampath"
 	    modeofdeployment= "azurecicd"
-	  }
+	  } */
+	   tags = var.tags
 	}
 	
 	resource "azurerm_app_service" "dev" {
@@ -50,11 +52,12 @@ resource "azurerm_app_service_plan" "dev" {
         "XDT_MicrosoftApplicationInsights_Mode":"recommended"
 	  }
 	
-	    tags = {
+	    /* tags = {
 	    environment = "dev"
 	    createdby="sampath"
 	    modeofdeployment= "azurecicd"
-	  }
+	  } */
+	   tags = var.tags
 	}
 	
 	
@@ -124,9 +127,11 @@ resource "azurerm_app_service_plan" "dev" {
 	    }
 	  }
 	    depends_on = [azurerm_app_service_plan.dev]
-	    tags = {
+	     /* tags = {
 	    environment = "dev"
 	    createdby="sampath"
 	    modeofdeployment= "azurecicd"
-	  }
+	  } */
+
+	  tags = var.tags
 	}
