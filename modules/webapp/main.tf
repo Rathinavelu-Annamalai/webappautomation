@@ -49,7 +49,7 @@ resource "azurerm_app_service_plan" "dev" {
 	  }
 	}
 	
-    data "azurerm_subnet" "subnet" {
+    / * data "azurerm_subnet" "subnet" {
         subnet_id=
     }
     
@@ -58,6 +58,7 @@ resource "azurerm_app_service_plan" "dev" {
 	  subnet_id       = azurerm_subnet.integrationsubnet.id
 	}
 	
+    */
 	
 	
 	resource "azurerm_monitor_autoscale_setting" "asplan1" {
