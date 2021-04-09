@@ -24,3 +24,11 @@ variable "dns_servers" {
   description = "The DNS servers to be used with vNet."
   default     = []
 }
+
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
+}
