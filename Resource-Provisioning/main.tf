@@ -10,11 +10,12 @@ resource "azurerm_resource_group" "resource_group" {
   //name     = "${var.application}-${var.environment}"
   name="${var.resource_group_name}"
   location = "${var.location}"
-  tags= {
+   /* tags= {
       CreatedBy="sampath"
       Environment="dev"
       ModeOfDeployment="cicd"    
-    }
+    } */
+    tags = var.tags
 }
 
 module "application-vnet" {
