@@ -1,5 +1,6 @@
-application = "myapp"
-environment = "env"
+//application = "myapp"
+//environment = "env"
+resource_group_name ="myresourcegroupdemo"
 location    = "Central US"
 
 
