@@ -34,3 +34,10 @@ module "application-subnets" {
   subnet_address_prefixes = "${var.subnet_address_prefixes}"
 }
 
+module "webapp" {
+ source = "../modules/webapp"
+ 
+
+
+}
+
