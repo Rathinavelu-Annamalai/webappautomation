@@ -67,8 +67,7 @@ terraform {
 	    destination_port_range     = "443"
 	    source_address_prefix      = "*"
 	    destination_address_prefix = "*"
-	  }
-	  {
+	  }, {
 	    name                       = "nsgrule2"
 	    priority                   = 100
 	    direction                  = "Inbound"
