@@ -49,17 +49,6 @@ resource "azurerm_app_service_plan" "dev" {
 	  }
 	}
 	
-    / * data "azurerm_subnet" "subnet" {
-        subnet_id=
-    }
-    
-    resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
-	  app_service_id  = azurerm_app_service.dev.id
-	  subnet_id       = azurerm_subnet.integrationsubnet.id
-	}
-	
-    */
-	
 	
 	resource "azurerm_monitor_autoscale_setting" "asplan1" {
 	  //name                ="__azuremonitor__"
