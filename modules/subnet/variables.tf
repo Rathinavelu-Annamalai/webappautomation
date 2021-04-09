@@ -23,12 +23,12 @@ variable "vnet_name" {
   default     = []
 }*/
 
-variable "subnet_name" {
+variable "subnet_names" {
   type=list(string)  
   default=""
 }
 
-variable "subnet_prefix" {
+variable "subnet_address_prefixes" {
   type=list(string)
   default=""
 }
