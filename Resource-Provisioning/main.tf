@@ -7,7 +7,8 @@ features {}
 
 
 resource "azurerm_resource_group" "resource_group" {
-  name     = "${var.application}-${var.environment}"
+  //name     = "${var.application}-${var.environment}"
+  name="${var.resource_group_name}"
   location = "${var.location}"
   tags= {
       CreatedBy="sampath"
