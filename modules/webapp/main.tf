@@ -36,10 +36,18 @@ resource "azurerm_app_service_plan" "dev" {
 	  resource_group_name="${var.resource_group_name}"
 	  app_service_plan_id = "${azurerm_app_service_plan.dev.id}"
 	  depends_on = [azurerm_app_service_plan.dev , azurerm_monitor_autoscale_setting.asplan1]
-	  app_settings = {
-	    "APPINSIGHTS_INSTRUMENTATIONKEY" = "${azurerm_application_insights.example.instrumentation_key}",
+	  app_settings = {      
+        "APPINSIGHTS_INSTRUMENTATIONKEY" = "${azurerm_application_insights.example.instrumentation_key}",
 	    "WEBSITE_DNS_SERVER": "168.63.129.16",
-	    "WEBSITE_VNET_ROUTE_ALL": "1"
+	    "WEBSITE_VNET_ROUTE_ALL": "1",
+		"APPINSIGHTS_PROFILERFEATURE_VERSION":"1.0.0",
+        "APPINSIGHTS_SNAPSHOTFEATURE_VERSION":"1.0.0",
+        "ApplicationInsightsAgent_EXTENSION_VERSION":"~2",
+        "DiagnosticServices_EXTENSION_VERSION":"~3",
+        "InstrumentationEngine_EXTENSION_VERSION":"disabled",
+        "SnapshotDebugger_EXTENSION_VERSION":"disabled",
+        "XDT_MicrosoftApplicationInsights_BaseExtensions":"disabled",
+        "XDT_MicrosoftApplicationInsights_Mode":"recommended"
 	  }
 	
 	    tags = {
