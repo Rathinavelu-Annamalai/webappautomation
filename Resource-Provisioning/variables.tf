@@ -22,13 +22,15 @@ variable "address_space" {
 
 variable "subnet_names" {
   description = ""
-  type= list
+  type= list(string)
 }
 
 variable "subnet_address_prefixes" {
   description = ""
   type= list
+  default= []
 }
+
 
 /*variable "application" {
   description = ""
