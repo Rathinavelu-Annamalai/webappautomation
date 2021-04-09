@@ -35,7 +35,7 @@ terraform {
 	}
 	
 	resource "azurerm_subnet" "integrationsubnet" {
-	  name                 = "dev-plutus-webapp-sn"
+	  name                 = "devplutuswebappsn"
 	  resource_group_name  = azurerm_resource_group.dev.name
 	  virtual_network_name = azurerm_virtual_network.vnet.name
 	  address_prefix     = var.subnet_address_prefix
