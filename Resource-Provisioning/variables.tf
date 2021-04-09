@@ -23,13 +23,13 @@ variable "address_space" {
 variable "subnet_names" {
   description = ""
   //type= list
-  default=[]
+  //default=[]
 }
 
 variable "subnet_address_prefixes" {
   description = ""
   //type= list
-  default= []
+  //default= []
 }
 
 
