@@ -7,3 +7,11 @@ variable "location" {
   description = "The location/region where we are crrating the resource"
   default     = ""
 }
+
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
+}
