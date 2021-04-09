@@ -18,6 +18,7 @@ resource "azurerm_app_service_plan" "dev" {
 	
 	resource "azurerm_application_insights" "example" {
 	  //name                = "__appinsights__"
+      name= "${var.appinsightname}"
 	  location            =  "${var.location}"
 	  resource_group_name="${var.resource_group_name}"
 	  application_type    = "web"
