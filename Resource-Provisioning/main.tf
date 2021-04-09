@@ -36,8 +36,15 @@ module "application-subnets" {
 
 module "webapp" {
  source = "../modules/webapp"
- 
+
 
 
 }
+
+  resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
+	  //app_service_id  = azurerm_app_service.dev.id
+	  //subnet_id       = azurerm_subnet.integrationsubnet.id
+    app_service_id = module.webapp.appservice_id
+    subnet_id = module.application-subnets.subnet_id
+	}
 
