@@ -13,7 +13,8 @@ terraform {
 	features {}
 	}
 	resource "azurerm_resource_group" "dev" {
-	  name     = "dev-rg-cu-plutus-webapp21"
+		name     = "__resourcegroup__"
+	  //name     = "dev-rg-cu-plutus-webapp21"
 	  location = "Central US"
 	  tags = {
 	   environment = "dev"
@@ -23,7 +24,8 @@ terraform {
 	}
 	
 	resource "azurerm_virtual_network" "vnet" {
-	  name                = "dev-plutus-webapp-vn"
+	  name ="__virtualnetwork__"
+	  //name                = "dev-plutus-webapp-vn"
 	  location            = azurerm_resource_group.dev.location
 	  resource_group_name = azurerm_resource_group.dev.name
 	  address_space       = var.vnet_address_prefix
@@ -35,7 +37,8 @@ terraform {
 	}
 	
 	resource "azurerm_subnet" "integrationsubnet" {
-	  name                 = "devplutuswebappsn"
+	  name="__subnetwork__"
+	  //name                 = "devplutuswebappsn"
 	  resource_group_name  = azurerm_resource_group.dev.name
 	  virtual_network_name = azurerm_virtual_network.vnet.name
 	  address_prefix     = var.subnet_address_prefix
@@ -49,7 +52,8 @@ terraform {
 	}
 	
 	resource "azurerm_network_security_group" "example" {
-	  name                = "dev-plutus-webapp-nsg"
+	  name="__nsg__"
+	  //name                = "dev-plutus-webapp-nsg"
 	  location            = azurerm_resource_group.dev.location
 	  resource_group_name = azurerm_resource_group.dev.name
 	
