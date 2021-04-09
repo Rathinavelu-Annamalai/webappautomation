@@ -7,7 +7,7 @@
 } */
 
 resource "azurerm_subnet" "subnet" {
-  count                = length(var.subnet_name)
+  count                = length(var.subnet_names)
   resource_group_name  = "${var.resource_group_name}"
   name                 = "${var.subnet_names[count.index]}"
   virtual_network_name = "${var.vnet_name}"
