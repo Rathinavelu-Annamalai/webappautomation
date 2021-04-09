@@ -53,6 +53,6 @@ resource "azurerm_network_security_group" "example" {
   //subnet_id                 = "${azurerm_subnet.subnet.*.id}"
   //subnet_id = flatten(azurerm_subnet.subnet.id)[0]
   count=length(var.subnet_names)
-  subnet_id= "${azurerm_subnet.subnet[count.index].id}"
+  subnet_id= "${azurerm_subnet.subnet.0.id}"
   network_security_group_id = azurerm_network_security_group.example.id
 } 
