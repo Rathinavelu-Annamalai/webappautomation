@@ -20,7 +20,7 @@ resource "azurerm_network_security_group" "example" {
  location            = "${var.location}"
  resource_group_name = "${var.resource_group_name}"
 
-  security_rule = [
+  security_rule 
     {
     name                       = "allow https"
     priority                   = 100
@@ -43,7 +43,6 @@ resource "azurerm_network_security_group" "example" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
    }
-] 
 
 }
   
