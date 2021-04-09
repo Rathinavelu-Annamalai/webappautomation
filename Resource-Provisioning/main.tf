@@ -36,9 +36,13 @@ module "application-subnets" {
 
 module "webapp" {
  source = "../modules/webapp"
-
-
-
+ location =  "${var.location}"
+ resource_group_name = "${azurerm_resource_group.resource_group.name}"
+ appserviceplan = "${var.appserviceplan}"
+ appservicename = "${var.appservicename}"
+ appinsightname = "${var.appinsightname}"
+ azuremonitorname = "${var.azuremonitorname}"
+ 
 }
 
   resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
