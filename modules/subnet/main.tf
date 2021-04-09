@@ -20,8 +20,7 @@ resource "azurerm_network_security_group" "example" {
  location            = "${var.location}"
  resource_group_name = "${var.resource_group_name}"
 
-  security_rule 
-    {
+  security_rule {
     name                       = "allow https"
     priority                   = 100
     direction                  = "Inbound"
@@ -31,8 +30,8 @@ resource "azurerm_network_security_group" "example" {
     destination_port_range     = "443"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
-   },
-   {
+   }
+   /*{
     name                       = "allow http"
     priority                   = 101
     direction                  = "Inbound"
@@ -42,8 +41,12 @@ resource "azurerm_network_security_group" "example" {
     destination_port_range     = "80"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
-   }
-
+   }*/
+   tags = {
+   environment = "dev"
+   createdby="sampath"
+   modeofdeployment= "azurecicd"
+  }
 }
   
  resource "azurerm_subnet_network_security_group_association" "example" {
