@@ -123,7 +123,6 @@ terraform {
 	    "WEBSITE_VNET_ROUTE_ALL": "1",
 		"APPINSIGHTS_PROFILERFEATURE_VERSION":"1.0.0",
 "APPINSIGHTS_SNAPSHOTFEATURE_VERSION":"1.0.0",
-"APPLICATIONINSIGHTS_CONNECTION_STRING":"InstrumentationKey=cac3ed85-9f08-406b-8945-5d374049d349;IngestionEndpoint=https://centralus-0.in.applicationinsights.azure.com/",
 "ApplicationInsightsAgent_EXTENSION_VERSION":"~2",
 "DiagnosticServices_EXTENSION_VERSION":"~3",
 "InstrumentationEngine_EXTENSION_VERSION":"disabled",
