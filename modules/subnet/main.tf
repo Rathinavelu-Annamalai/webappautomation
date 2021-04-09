@@ -13,12 +13,18 @@ resource "azurerm_subnet" "subnet" {
   virtual_network_name = "${var.vnet_name}"
   address_prefixes     = [var.subnet_address_prefixes[count.index]]
       
-      delegation {
+     /* delegation {
       name = "delegation"
       service_delegation {
       name    = "Microsoft.ContainerInstance/containerGroups"
       actions = ["Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action"]
-    }
+    }*/
+      delegation {
+	    name = "delegation"
+	    service_delegation {
+	      name = "Microsoft.Web/serverFarms"
+	    }
+
   }
 } 
 
