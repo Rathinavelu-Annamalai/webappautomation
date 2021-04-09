@@ -25,12 +25,12 @@ variable "vnet_name" {
 
 variable "subnet_names" {
   //type =list
-  default =[]
+  //default =[]
 }
 
 variable "subnet_address_prefixes" {
   //type =list
-  default =[]
+  //default =[]
 }
 /*variable "add_endpoint" {
   description = "should we be adding an endpint, leave this as is"
