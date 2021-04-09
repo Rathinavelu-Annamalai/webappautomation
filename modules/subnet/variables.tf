@@ -24,12 +24,12 @@ variable "vnet_name" {
 }*/
 
 variable "subnet_names" {
-  type =list
+  //type =list
   default =[]
 }
 
 variable "subnet_address_prefixes" {
-  type =list
+  //type =list
   default =[]
 }
 /*variable "add_endpoint" {
