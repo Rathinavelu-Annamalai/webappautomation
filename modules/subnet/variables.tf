@@ -24,8 +24,8 @@ variable "vnet_name" {
 }*/
 
 variable "subnet_names" {
-  type =list(string)
-  //default =[]
+  type =list
+  default =[]
 }
 
 variable "subnet_address_prefixes" {
