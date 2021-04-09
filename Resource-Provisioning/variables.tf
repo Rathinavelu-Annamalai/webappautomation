@@ -61,4 +61,12 @@ description = ""
 variable "azuremonitorname" {
  description = ""
   default     = ""   
+ }
+
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
 }
