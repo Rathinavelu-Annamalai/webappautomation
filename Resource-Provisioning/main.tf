@@ -49,6 +49,6 @@ module "webapp" {
 	  //app_service_id  = azurerm_app_service.dev.id
 	  //subnet_id       = azurerm_subnet.integrationsubnet.id
     app_service_id = module.webapp.appservice_id
-    subnet_id = module.application-subnets.0.subnet_id
+    subnet_id = module.application-subnets.subnet_id
 	}
 
