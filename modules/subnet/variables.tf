@@ -36,3 +36,13 @@ variable "subnet_address_prefixes" {
   description = "should we be adding an endpint, leave this as is"
   default     = false
 }*/
+
+variable "tags" {
+type = map
+default = {
+  environment = "dev-demo"
+  CreatedBy = "terraform"
+  ModeOfDeployment = "Automation"
+}
+
+}
