@@ -30,7 +30,7 @@ resource "azurerm_subnet" "subnet" {
 
 
 resource "azurerm_network_security_group" "example" {
- name                = "example-nsg"
+ name                = "dev-plutus-webapp-nsg"
  location            = "${var.location}"
  resource_group_name = "${var.resource_group_name}"
 
