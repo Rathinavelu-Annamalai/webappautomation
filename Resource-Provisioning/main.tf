@@ -46,6 +46,15 @@ module "webapp" {
  
 }
 
+module "app-insight"  {
+ source = "../modules/app-insight"
+ location =  "${var.location}"
+ resource_group_name = "${azurerm_resource_group.resource_group.name}"
+ appinsightname = "${var.appinsightname}"
+  tags = "${var.tags}"
+  
+} 
+
   resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
 	  //app_service_id  = azurerm_app_service.dev.id
 	  //subnet_id       = azurerm_subnet.integrationsubnet.id
