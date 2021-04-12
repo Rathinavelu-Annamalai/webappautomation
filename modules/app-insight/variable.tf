@@ -12,3 +12,7 @@ variable "applinsightname" {
   description = ""
   default     = ""
 }
+
+variable "tags" {
+    description = ""    
+}
