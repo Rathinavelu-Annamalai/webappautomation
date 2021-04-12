@@ -1,6 +1,6 @@
 //application = "myapp"
 //environment = "env"
-resource_group_name ="dev-rg-cu-plutus-webapp21"
+resource_group_name ="dev-rg-cu-plutus-webapp26"
 location    = "Central US"
 
 
