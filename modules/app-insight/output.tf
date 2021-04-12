@@ -1,3 +1,3 @@
-output "azurerm_app_service" instrumentation_key {
-    value = azurerm_app_service.example.instrumentation_key
+output "instrumentation_key" {
+    value = azurerm_application_insights.example.instrumentation_key
 }
