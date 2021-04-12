@@ -30,9 +30,10 @@ resource "azurerm_app_service_plan" "dev" {
 	  }
 	   tags = var.tags
 	}  */
-	module "app-insight"  {
+	
+	/* module "app-insight"  {
 		source = "./modules/app-insight"
-	}
+	} */
 
 
 	resource "azurerm_app_service" "dev" {
@@ -44,7 +45,7 @@ resource "azurerm_app_service_plan" "dev" {
 	  depends_on = [azurerm_app_service_plan.dev , azurerm_monitor_autoscale_setting.asplan1]
 	  app_settings = {      
         //"APPINSIGHTS_INSTRUMENTATIONKEY" = "${azurerm_application_insights.example.instrumentation_key}",
-		"APPINSIGHTS_INSTRUMENTATIONKEY" = module.app-insight.instrumentation_key,
+		//"APPINSIGHTS_INSTRUMENTATIONKEY" = module.app-insight.instrumentation_key,
 	    "WEBSITE_DNS_SERVER": "168.63.129.16",
 	    "WEBSITE_VNET_ROUTE_ALL": "1",
 		"APPINSIGHTS_PROFILERFEATURE_VERSION":"1.0.0",
