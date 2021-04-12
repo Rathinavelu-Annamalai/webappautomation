@@ -8,7 +8,7 @@ variable "location" {
   default     = ""
 }
 
-variable "applinsightname" {
+variable "appinsightname" {
   description = ""
   default     = ""
 }
