@@ -33,7 +33,7 @@ resource "azurerm_app_service_plan" "dev" {
 	
 	resource "azurerm_app_service" "dev" {
 	  //name                = "__appservicename__"
-	  source = ../modules/app-insight
+	  source = "../modules/app-insight"
       name                 = "${var.appservicename}"
 	  location            =  "${var.location}"
 	  resource_group_name="${var.resource_group_name}"
