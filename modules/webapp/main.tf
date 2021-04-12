@@ -23,11 +23,11 @@ resource "azurerm_app_service_plan" "dev" {
 	  location            =  "${var.location}"
 	  resource_group_name="${var.resource_group_name}"
 	  application_type    = "web"
-	/* tags = {
+	 tags = {
 	    environment = "dev"
 	    createdby="sampath"
 	    modeofdeployment= "azurecicd"
-	  } */
+	  }
 	   tags = var.tags
 	}  */
 	
