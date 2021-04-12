@@ -29,7 +29,7 @@ resource "azurerm_app_service_plan" "dev" {
 	    modeofdeployment= "azurecicd"
 	  } */
 	   tags = var.tags
-	}
+	} 
 	
 	resource "azurerm_app_service" "dev" {
 	  //name                = "__appservicename__"
