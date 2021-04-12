@@ -31,7 +31,7 @@ resource "azurerm_app_service_plan" "dev" {
 	   tags = var.tags
 	}  */
 	module "app-insight"  {
-		source = "../modules/app-insight"
+		source = "./modules/app-insight"
 	}
 
 
