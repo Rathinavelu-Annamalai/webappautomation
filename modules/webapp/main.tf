@@ -17,7 +17,7 @@ resource "azurerm_app_service_plan" "dev" {
 	
 	}
 	
-	resource "azurerm_application_insights" "example" {
+	/* resource "azurerm_application_insights" "example" {
 	  //name                = "__appinsights__"
       name= "${var.appinsightname}"
 	  location            =  "${var.location}"
@@ -29,17 +29,19 @@ resource "azurerm_app_service_plan" "dev" {
 	    modeofdeployment= "azurecicd"
 	  } */
 	   tags = var.tags
-	} 
+	}  */
 	
 	resource "azurerm_app_service" "dev" {
 	  //name                = "__appservicename__"
+	  source = ../modules/app-insight
       name                 = "${var.appservicename}"
 	  location            =  "${var.location}"
 	  resource_group_name="${var.resource_group_name}"
 	  app_service_plan_id = "${azurerm_app_service_plan.dev.id}"
 	  depends_on = [azurerm_app_service_plan.dev , azurerm_monitor_autoscale_setting.asplan1]
 	  app_settings = {      
-        "APPINSIGHTS_INSTRUMENTATIONKEY" = "${azurerm_application_insights.example.instrumentation_key}",
+        //"APPINSIGHTS_INSTRUMENTATIONKEY" = "${azurerm_application_insights.example.instrumentation_key}",
+		"APPINSIGHTS_INSTRUMENTATIONKEY" = "${module.app-insight.instrumentation_key}",
 	    "WEBSITE_DNS_SERVER": "168.63.129.16",
 	    "WEBSITE_VNET_ROUTE_ALL": "1",
 		"APPINSIGHTS_PROFILERFEATURE_VERSION":"1.0.0",
