@@ -6,13 +6,13 @@ features {}
 }
 
 module "resource_group" {
- source ="../modules/resourcegroup"
+ source ="./modules/resourcegroup"
  resource_group_name = "${var.prefix}-${var.resource_group_name}"
  location = "${var.location}"
 }
 
 module "vnet" {
-  source              = "../modules/vnet"
+  source              = "./modules/vnet"
   resource_group_name = "${module.resource_group.resource_group_name}"
   location            = "${module.resource_group.location}"
   vnet_name           = "${var.prefix}-vnet"
@@ -20,7 +20,7 @@ module "vnet" {
 }
 
 module "application-subnets" {
-  source              = "../modules/subnet"
+  source              = "./modules/subnet"
   resource_group_name = "${module.resource_group.resource_group_name}"
   location            = "${module.resource_group.location}"
   vnet_name           = "${module.vnet.vnet_name}"
