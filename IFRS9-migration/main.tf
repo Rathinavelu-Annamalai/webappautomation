@@ -14,8 +14,9 @@ module "resource_group" {
 
 module "vnet" {
   source              = "../modules/vnet"
-  resource_group_name = "${module.resource_group.resource_group_name}"
-  location            = "${module.resource_group.location}"
+  //resource_group_name = "${module.resource_group.resource_group_name}"
+  resource_group_name = "${module.resource_group.rg_name}"
+  location            = "${module.resource_group.rg_location}"
   vnet_name           = "${var.prefix}-vnet"
   address_space       = "${var.address_space}"
   tags = "${var.tags}"
@@ -23,8 +24,8 @@ module "vnet" {
 
 module "application-subnets" {
   source              = "../modules/subnet"
-  resource_group_name = "${module.resource_group.resource_group_name}"
-  location            = "${module.resource_group.location}"
+  resource_group_name = "${module.resource_group.rg_name}"
+  location            = "${module.resource_group.rg_location}"
   vnet_name           = "${module.vnet.vnet_name}"
   subnet_names         ="${var.subnet_names}"
   subnet_address_prefixes = "${var.subnet_address_prefixes}"
