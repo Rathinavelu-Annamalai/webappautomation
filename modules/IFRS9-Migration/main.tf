@@ -1,3 +1,10 @@
+terraform {
+  required_version = ">= 0.12.0"
+}
+provider "azurerm" {
+features {}
+}
+
 module "resource_group" {
  source ="../modules/resourcegroup"
  resource_group_name = "${var.prefix}-${var.resource_group_name}"
