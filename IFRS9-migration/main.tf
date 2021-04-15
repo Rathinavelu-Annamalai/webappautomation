@@ -9,6 +9,7 @@ module "resource_group" {
  source ="./modules/resourcegroup"
  resource_group_name = "${var.prefix}-${var.resource_group_name}"
  location = "${var.location}"
+ tags = "${var.tags}"
 }
 
 module "vnet" {
@@ -17,6 +18,7 @@ module "vnet" {
   location            = "${module.resource_group.location}"
   vnet_name           = "${var.prefix}-vnet"
   address_space       = "${var.address_space}"
+  tags = "${var.tags}"
 }
 
 module "application-subnets" {
